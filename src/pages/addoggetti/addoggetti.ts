@@ -37,13 +37,9 @@ export class AddoggettiPage {
     });
   }
 
-  ionViewDidLoad(): void {
-    location.reload();
-  }
-
   submit (): void { //funzione che aggiunge un oggetto richiamando funzione del servizio
     this.serviziooggetti.addItem (this.oggetto);
-    this.navCtrl.pop();
+    this.navCtrl.setRoot(this.homepage);
   }
 
   nullo (): void {} //funzione da implementare per futuro

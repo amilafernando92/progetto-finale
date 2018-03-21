@@ -12,9 +12,6 @@
     <ion-label>Descrizione del Oggetto : {{ app.descrizione }}</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Foto : {{ app.foto }}</ion-label>
-  </ion-item>
-  <ion-item>
     <ion-label>Disponibilità : {{ app.disponibilita }}</ion-label>
   </ion-item>
   <ion-item>
@@ -22,6 +19,11 @@
   </ion-item>
   <ion-item>
     <ion-label>Quando l'ha preso : {{ app.giorno | date: 'dd-MM-yyyy' }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <div>
+      <img src="{{ app.foto }}">
+    </div>
   </ion-item>
   <button ion-button type="button" (click)="elimina ()">Elimina</button>
   <button ion-button type="button" [navPush]='homepage'>Annulla</button>
