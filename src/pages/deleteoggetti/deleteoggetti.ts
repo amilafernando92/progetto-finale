@@ -1,6 +1,9 @@
+//altri
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+// Pagine
 import { HomePage } from '../home/home';
+//servizi / provider
 import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettiservice';
 
 @IonicPage()

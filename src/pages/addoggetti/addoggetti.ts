@@ -1,10 +1,11 @@
+//altri
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { NativeStorage } from "@ionic-native/native-storage";
+//classe / model
 import { Oggetti } from '../../model/class';
-import { Validators, FormBuilder, FormGroup } from "@angular/forms";
-import { StorageserviceProvider } from '../../providers/storageservice/storageservice';
+//servizi / provider
 import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettiservice';
+// Pagine
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -13,9 +14,11 @@ import { HomePage } from '../home/home';
   templateUrl: "addoggetti.html"
 })
 export class AddoggettiPage {
+
   oggetto: Oggetti;
   homepage = HomePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private nativeStorage: NativeStorage, private storage: StorageserviceProvider, private serviziooggetti: OggettiserviceProvider) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private serviziooggetti: OggettiserviceProvider) {
     this.oggetto = new Oggetti ();
   }
 

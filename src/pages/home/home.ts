@@ -1,11 +1,15 @@
+//altri
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Oggetti } from '../../model/class';
+//storage
 import { NativeStorage } from '@ionic-native/native-storage';
+//classe / model
+import { Oggetti } from '../../model/class';
 // Pagine
 import { AddoggettiPage } from '../addoggetti/addoggetti';
 import { ModifyoggettiPage } from '../modifyoggetti/modifyoggetti';
 import { DeleteoggettiPage } from '../deleteoggetti/deleteoggetti';
+//servizi / provider
 import { StorageserviceProvider } from '../../providers/storageservice/storageservice';
 import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettiservice';
 
@@ -15,7 +19,9 @@ import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettise
   templateUrl: 'home.html',
 })
 export class HomePage {
+
   vettore: Oggetti[] = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public nativeStorage: NativeStorage, private storage: StorageserviceProvider, private serviziooggetti: OggettiserviceProvider) {
   }
 

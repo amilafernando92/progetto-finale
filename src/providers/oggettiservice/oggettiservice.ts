@@ -1,15 +1,18 @@
-import { HttpClient } from '@angular/common/http';
+//altri
 import { Injectable } from '@angular/core';
-import { Oggetti } from '../../model/class';
+//oservabili
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+//classe / model
+import { Oggetti } from '../../model/class';
+//servizi / provider
 import { StorageserviceProvider } from '../../providers/storageservice/storageservice';
 
 @Injectable()
 export class OggettiserviceProvider {
-  oggetto: Oggetti;
+
   vettore: Oggetti[] = [];
-  date: string = new Date().toISOString();
+
   constructor(private storage: StorageserviceProvider) {
   }
 

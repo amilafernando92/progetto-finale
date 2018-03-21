@@ -1,13 +1,13 @@
+//altri
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+//storage
 import { NativeStorage } from "@ionic-native/native-storage";
-import { Oggetti } from "../../model/class";
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+//classe / model
+import { Oggetti } from '../../model/class';
 
 @Injectable()
 export class StorageserviceProvider {
-
 
   constructor(public http: HttpClient, private nativeStorage: NativeStorage) {
   }
@@ -19,5 +19,4 @@ export class StorageserviceProvider {
   setStorageItem (vettore): void {
     this.nativeStorage.setItem("vettore", vettore);
   }
-
 }
