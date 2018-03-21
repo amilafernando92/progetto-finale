@@ -41,8 +41,8 @@
       <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="app.giorno" name="giorno">giorno | date: 'dd-MM-yyyy'</ion-datetime>
     </ion-item>
     <ion-item>
-      <div>
-        <img src="{{ app.foto }}">
+      <div class="contenitoreimg">
+        <button class="contenitoreimg" (click)="takePicture()"><img src="{{ app.foto }}" class="contenitoreimg"></button>
       </div>
     </ion-item>
     <button ion-button type="button" (click)="modify ()">Modifica</button>

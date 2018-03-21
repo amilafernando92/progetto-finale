@@ -25,6 +25,9 @@ ion-title.title.title-md {
 ion-title div.toolbar-title.toolbar-title-md {
     font-size: 4rem;
 }
+.colortransparent {
+    background-color: transparent;
+}
 .colorgreen {
     background-color: #00ff00;
 }
@@ -45,4 +48,7 @@ ion-title div.toolbar-title.toolbar-title-md {
 }
 #containerimg {
     margin-right: 1%;
+}
+.item-inner {
+    border: none;
 }
