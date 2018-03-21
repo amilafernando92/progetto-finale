@@ -1,7 +1,7 @@
 //altri
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
 //classe / model
 import { Oggetti } from '../../model/class';
 //servizi / provider
@@ -31,18 +31,19 @@ export class AddoggettiPage {
       mediaType: this.camera.MediaType.PICTURE
     }).then((imageData) => {
       // imageData is a base64 encoded string
-        let base64Image = "data:image/jpeg;base64," + imageData;
+        this.oggetto.foto = "data:image/jpeg;base64," + imageData;
     }, (err) => {
         console.log(err);
     });
   }
 
   ionViewDidLoad(): void {
+    location.reload();
   }
 
   submit (): void { //funzione che aggiunge un oggetto richiamando funzione del servizio
     this.serviziooggetti.addItem (this.oggetto);
-    this.navCtrl.push(this.homepage);
+    this.navCtrl.pop();
   }
 
   nullo (): void {} //funzione da implementare per futuro

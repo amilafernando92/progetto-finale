@@ -25,10 +25,6 @@
         <ion-input type="text" [(ngModel)]="oggetto.descrizione" name="descrizione"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Foto</ion-label>
-        <ion-input type="text" [(ngModel)]="oggetto.foto" name="foto"></ion-input>
-      </ion-item>
-      <ion-item>
         <ion-label>Prestato</ion-label>
         <ion-toggle [(ngModel)]="oggetto.disponibilita" name="disponibilita"></ion-toggle>
       </ion-item>
@@ -41,8 +37,8 @@
         <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="oggetto.giorno" name="giorno"></ion-datetime>
       </ion-item>
       <ion-item>
-        <div>
-          <button (click)="takePicture()">Take a Picture</button>
+        <div class="contenitoreimg">
+          <button class="contenitoreimg" (click)="takePicture()"></button>
         </div>
       </ion-item>
       <button ion-button type="button" (click)="submit ()">Carica</button>

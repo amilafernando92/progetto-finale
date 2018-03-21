@@ -15,7 +15,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { StorageserviceProvider } from '../providers/storageservice/storageservice';
 import { HttpClientModule } from '@angular/common/http';
 import { OggettiserviceProvider } from '../providers/oggettiservice/oggettiservice';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
