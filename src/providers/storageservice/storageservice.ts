@@ -12,11 +12,11 @@ export class StorageserviceProvider {
   constructor(public http: HttpClient, private nativeStorage: NativeStorage) {
   }
 
-  getStorageItem (): Promise<Oggetti[]> {
+  getStorageItem (): Promise<Oggetti[]> { //funzione che prende dati dal storage
     return this.nativeStorage.getItem("vettore");
   }
 
-  setStorageItem (vettore): void {
+  setStorageItem (vettore): void { //funzione che carica dati al storage
     this.nativeStorage.setItem("vettore", vettore);
   }
 }

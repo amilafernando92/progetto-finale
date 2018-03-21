@@ -25,9 +25,9 @@ export class AddoggettiPage {
   ionViewDidLoad(): void {
   }
 
-  submit (): void {
+  submit (): void { //funzione che aggiunge un oggetto richiamando funzione del servizio
     this.serviziooggetti.addItem (this.oggetto);
   }
 
-  nullo (): void {}
+  nullo (): void {} //funzione da implementare per futuro
 }

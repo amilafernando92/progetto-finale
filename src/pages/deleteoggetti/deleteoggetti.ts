@@ -23,7 +23,7 @@ export class DeleteoggettiPage {
   ionViewDidLoad(): void {
   }
 
-  elimina (): void {
+  elimina (): void {  //funzione che elimina oggetto richiamando la funzione del servizio
     this.serviziooggetti.removeItem(this.app.id);
   }
 

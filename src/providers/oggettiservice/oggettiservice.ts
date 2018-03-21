@@ -16,22 +16,22 @@ export class OggettiserviceProvider {
   constructor(private storage: StorageserviceProvider) {
   }
 
-  setVettore(vettore: Oggetti[]): void {
+  setVettore(vettore: Oggetti[]): void {  //funzione che setta il vettore <arriva dal home.ts>
     this.vettore = vettore;
   }
   
-  getOggetto (): Observable<Oggetti[]> {
+  getOggetto (): Observable<Oggetti[]> {  //funzione che prende vettore
     return of(this.vettore);
   }
 
-  addItem (appobject): void {
+  addItem (appobject): void { //aggiunge un oggetto al vettore e poi caricato nello storage <viene dal addoggetti.ts>
     appobject.id = this.vettore.length+1;
     this.vettore.push(appobject);
     console.log(this.vettore);
     this.storage.setStorageItem (this.vettore);
   }
 
-  setOggetto (appid, nome, descrizione, foto, disponibilita, personaprestato, giorno): void  {
+  setOggetto (appid, nome, descrizione, foto, disponibilita, personaprestato, giorno): void  {  //modifica del oggetto e caricato nel storage <viene dal modifyoggetti.ts>
     this.vettore.forEach((item, index) => {
       if (item.id === appid) {
         item.nome = nome;
@@ -46,7 +46,7 @@ export class OggettiserviceProvider {
     this.storage.setStorageItem (this.vettore);
   }
 
-  removeItem(appid): void {
+  removeItem(appid): void { //cancella un oggetto dal vettore e caricata nel storage <viene dal deleteoggetti.ts>
     this.vettore.forEach((item, index) => {
       if (item.id === appid) this.vettore.splice(index, 1);
     });

@@ -23,9 +23,9 @@ export class ModifyoggettiPage {
   ionViewDidLoad(): void {
   }
 
-  modify (): void {
+  modify (): void { //funzione che modifica l'oggetto richiamando funzione del servizio
     this.serviziooggetti.setOggetto (this.app.id, this.app.nome, this.app.descrizione, this.app.foto, this.app.disponibilita, this.app.personaprestato, this.app.giorno)
   }
 
-  nullo (): void {}
+  nullo (): void {} //funzione da implementare per futuro
 }

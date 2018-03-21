@@ -20,12 +20,12 @@ import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettise
 })
 export class HomePage {
 
-  vettore: Oggetti[] = [];
+  vettore: Oggetti[] = [];  //vettore di oggetti che contiene gli oggetti presi dal storage
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public nativeStorage: NativeStorage, private storage: StorageserviceProvider, private serviziooggetti: OggettiserviceProvider) {
   }
 
-  ionViewDidLoad(): void {
+  ionViewDidLoad(): void {  //solo qui viene richiamato getstorage
     this.storage.getStorageItem ().then(
       data => { (data) ? this.vettore = data : this.vettore = [] 
           this.serviziooggetti.setVettore(this.vettore);
@@ -34,7 +34,7 @@ export class HomePage {
     );
   }
 
-  changepage (app, type): void {
+  changepage (app, type): void {  //funzione in base al click cambia pagina
     switch (type) {
       case 1 :
         this.navCtrl.push (AddoggettiPage);
