@@ -24,7 +24,8 @@ export class ModifyoggettiPage {
   }
 
   modify (): void { //funzione che modifica l'oggetto richiamando funzione del servizio
-    this.serviziooggetti.setOggetto (this.app.id, this.app.nome, this.app.descrizione, this.app.foto, this.app.disponibilita, this.app.personaprestato, this.app.giorno)
+    this.serviziooggetti.setOggetto (this.app.id, this.app.nome, this.app.descrizione, this.app.foto, this.app.disponibilita, this.app.personaprestato, this.app.giorno);
+    this.navCtrl.push(this.homepage);
   }
 
   nullo (): void {} //funzione da implementare per futuro

@@ -19,6 +19,9 @@
   <ion-list>
     <ion-item-sliding *ngFor="let vet of vettore">
       <ion-item>
+        prova
+      </ion-item>
+      <ion-item>
         <p class="bigtext">{{ vet.nome }}</p>
         <p class="smalltext">Prestato a {{ vet.personaprestato }}, in data {{ vet.giorno | date: 'dd-MM-yyyy' }}</p>
       </ion-item>
@@ -27,7 +30,7 @@
         <button ion-button class="colorred textcolorblack" (click)="changepage (vet, 3)"><ion-icon class="icon" ios="ios-trash-outline" md="md-trash"></ion-icon></button> 
       </ion-item-options>
       <ion-item-options side="left">
-        <button ion-button color="{{vet.disponibilita ? 'Danger': 'Primary'}}" block>Disponibilità</button>
+        <button ion-button block>Disponibilità</button>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

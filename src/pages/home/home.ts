@@ -12,6 +12,7 @@ import { DeleteoggettiPage } from '../deleteoggetti/deleteoggetti';
 //servizi / provider
 import { StorageserviceProvider } from '../../providers/storageservice/storageservice';
 import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettiservice';
+import { Platform } from 'ionic-angular/platform/platform';
 
 @IonicPage()
 @Component({
@@ -21,17 +22,20 @@ import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettise
 export class HomePage {
 
   vettore: Oggetti[] = [];  //vettore di oggetti che contiene gli oggetti presi dal storage
+  myColor = this.funzioneProva ();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public nativeStorage: NativeStorage, private storage: StorageserviceProvider, private serviziooggetti: OggettiserviceProvider) {
+  constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, public nativeStorage: NativeStorage, private storage: StorageserviceProvider, private serviziooggetti: OggettiserviceProvider) {
   }
 
   ionViewDidLoad(): void {  //solo qui viene richiamato getstorage
-    this.storage.getStorageItem ().then(
-      data => { (data) ? this.vettore = data : this.vettore = [] 
-          this.serviziooggetti.setVettore(this.vettore);
-      },
-      error => console.error(error)
-    );
+    this.platform.ready().then(() => {
+      this.storage.getStorageItem ().then(
+        data => { (data) ? this.vettore = data : this.vettore = [] 
+            this.serviziooggetti.setVettore(this.vettore);
+        },
+        error => console.error(error)
+      );
+    });
   }
 
   changepage (app, type): void {  //funzione in base al click cambia pagina
@@ -45,6 +49,12 @@ export class HomePage {
       case 3 :
         this.navCtrl.push (DeleteoggettiPage, { prova: app });
       break;
+    }
+  }
+
+  funzioneProva () {
+    for (let cont=0; cont<this.vettore.length;cont++) {
+      this.vettore[cont].id
     }
   }
 }
