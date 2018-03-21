@@ -1,7 +1,7 @@
 page-home {
 
 }
-#iconadd {
+.icon {
     font-size: 3rem;
 }
 #button_addoggetti {
@@ -27,4 +27,13 @@ ion-title.title.title-md {
 }
 ion-title div.toolbar-title.toolbar-title-md {
     font-size: 4rem;
+}
+.colorgreen {
+    background-color: green;
+}
+.colorred {
+    background-color: red;
+}
+.textcolorblack {
+    color: black;
 }

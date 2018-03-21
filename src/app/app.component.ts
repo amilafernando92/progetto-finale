@@ -6,7 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 // Pagine
 import { HomePage } from '../pages/home/home';
-import { OggettiPage } from '../pages/oggetti/oggetti';
+import { AddoggettiPage } from '../pages/addoggetti/addoggetti';
+import { ModifyoggettiPage } from '../pages/modifyoggetti/modifyoggetti';
+import { DeleteoggettiPage } from '../pages/deleteoggetti/deleteoggetti';
 
 
 @Component({
@@ -30,7 +32,9 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Oggetti', component: OggettiPage }
+      { title: 'Aggiungi', component: AddoggettiPage },
+      { title: 'Modifica', component: ModifyoggettiPage },
+      { title: 'Elimina', component: DeleteoggettiPage }
     ];
   }
 

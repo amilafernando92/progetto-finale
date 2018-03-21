@@ -8,35 +8,27 @@
 
   <ion-navbar>
     <ion-title>Home</ion-title>
-    <button [navPush]='addoggettipage' id="button_addoggetti" class="float-right"><ion-icon id="iconadd" name='ios-add-circle-outline'></ion-icon></button>
-    <button [navPush]='modifyoggettipage' id="button_addoggetti" class="float-right"><ion-icon id="iconadd" name='ios-build-outline'></ion-icon></button>
-    <button [navPush]='deleteoggettipage' id="button_addoggetti" class="float-right"><ion-icon id="iconadd" name='ios-close-circle-outline'></ion-icon></button>
+    <button id="button_addoggetti" class="float-right" (click)="changepage (this.class, 1)"><ion-icon class="icon" name='ios-add-circle-outline'></ion-icon></button>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h1 id="h1testohome">Oggetto Prestati</h1>
+  <h1 id="h1testohome">Oggetti Prestati</h1>
   <ion-list>
-    <ion-item *ngFor="let vet of vettore">
-      <p class="bigtext">{{ vet.nome }}</p>
-      <p class="smalltext">Prestato a {{ vet.prestato }}, in data {{ vet.giorno }}</p>
-    </ion-item>
-    <!-- <ion-item>
-      <p class="bigtext">{{ oggetto2.nome }}</p>
-      <p class="smalltext">Prestato a {{ oggetto2.prestato }}, in data {{ oggetto2.giorno }}</p>
-    </ion-item>
-    <ion-item>
-      <p class="bigtext">{{ oggetto3.nome }}</p>
-      <p class="smalltext">Prestato a {{ oggetto3.prestato }}, in data {{ oggetto3.giorno }}</p>
-    </ion-item>
-    <ion-item>
-      <p class="bigtext">{{ oggetto4.nome }}</p>
-      <p class="smalltext">Prestato a {{ oggetto4.prestato }}, in data {{ oggetto4.giorno }}</p>
-    </ion-item> -->
+    <ion-item-sliding *ngFor="let vet of vettore">
+      <ion-item>
+        <p class="bigtext">{{ vet.nome }}</p>
+        <p class="smalltext">Prestato a {{ vet.personaprestato }}, in data {{ vet.giorno | date: 'dd-MM-yyyy' }}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button class="colorgreen textcolorblack" (click)="changepage (vet, 2)"><ion-icon class="icon" ios="ios-construct-outline" md="md-construct"></ion-icon></button> 
+        <button ion-button class="colorred textcolorblack" (click)="changepage (vet, 3)"><ion-icon class="icon" ios="ios-trash-outline" md="md-trash"></ion-icon></button> 
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="{{vet.disponibilita ? 'Danger': 'Primary'}}" block>Disponibilità</button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
-  <ion-card-content>
-    <button [navPush]="oggettipage">Visualizza Oggetti</button>
-  </ion-card-content>
 </ion-content>

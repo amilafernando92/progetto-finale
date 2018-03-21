@@ -1,15 +1,11 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { NativeStorage } from "@ionic-native/native-storage";
-import { Oggetti } from "../../model/class";
+import { Oggetti } from '../../model/class';
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
-
-/**
- * Generated class for the AddoggettiPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { StorageserviceProvider } from '../../providers/storageservice/storageservice';
+import { OggettiserviceProvider } from '../../providers/oggettiservice/oggettiservice';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -17,38 +13,18 @@ import { Validators, FormBuilder, FormGroup } from "@angular/forms";
   templateUrl: "addoggetti.html"
 })
 export class AddoggettiPage {
-  private todo: FormGroup;
-  vettore = [];
-
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private formBuilder: FormBuilder,
-    private nativeStorage: NativeStorage
-  ) {
-    this.todo = this.formBuilder.group({
-      nome: ["", Validators.required],
-      descrizione: [""],
-      foto: [""],
-      prestato: [""],
-      giorno: [""]
-    });
+  oggetto: Oggetti;
+  homepage = HomePage;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private nativeStorage: NativeStorage, private storage: StorageserviceProvider, private serviziooggetti: OggettiserviceProvider) {
+    this.oggetto = new Oggetti ();
   }
 
-  ionViewDidLoad() {
-    this.nativeStorage.getItem("vettore").then(
-      data => { (data) ? this.vettore = data : this.vettore = [] },
-      error => console.error(error)
-    );
-
+  ionViewDidLoad(): void {
   }
 
-  logForm() {
-    this.vettore.push(this.todo.value);
-    this.nativeStorage.setItem("vettore", this.vettore).then(() =>
-      //console.log('Caricato del Storage'),
-      error => console.error("Error storing item", error)
-    );
-
+  submit (): void {
+    this.serviziooggetti.addItem (this.oggetto);
   }
+
+  nullo (): void {}
 }

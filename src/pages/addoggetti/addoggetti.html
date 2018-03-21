@@ -11,27 +11,36 @@
 </ion-header>
 
 <ion-content padding class="addoggettipage">
-  <form [formGroup]="todo" (ngSubmit)="logForm()">
+  <form (ngSubmit)="">
+    <ion-item class="displaynone">
+      <ion-label disabled="true">Id del Oggetto</ion-label>
+      <ion-input type="text" [(ngModel)]="oggetto.id" name="id" disabled="true"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label>Nome del Oggetto</ion-label>
-      <ion-input type="text" formControlName="nome"></ion-input>
+      <ion-input type="text" [(ngModel)]="oggetto.nome" name="nome"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Descrizione del Oggetto</ion-label>
-      <ion-textarea formControlName="descrizione"></ion-textarea>
+      <ion-input type="text" [(ngModel)]="oggetto.descrizione" name="descrizione"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Foto</ion-label>
-      <ion-input formControlName="foto"></ion-input>
+      <ion-input type="text" [(ngModel)]="oggetto.foto" name="foto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Prestato</ion-label>
+      <ion-toggle [(ngModel)]="oggetto.disponibilita" name="disponibilita"></ion-toggle>
     </ion-item>
     <ion-item>
       <ion-label>A Chi è stato Prestato</ion-label>
-      <ion-input formControlName="prestato"></ion-input>
+      <ion-input type="text" [(ngModel)]="oggetto.personaprestato" name="personaprestato"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Quando è stato Prestato</ion-label>
-      <ion-input formControlName="giorno"></ion-input>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="oggetto.giorno" name="giorno"></ion-datetime>
     </ion-item>
-    <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+    <button ion-button type="button" (click)="submit ()">Carica</button>
+    <button ion-button type="button" [navPush]='homepage'>Annulla</button>
   </form>
 </ion-content>

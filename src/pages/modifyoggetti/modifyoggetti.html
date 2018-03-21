@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ModifyoggettiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Modifica dell'Oggetto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="aggiungi ()">
+    <ion-item class="displaynone">
+      <ion-label disabled="true">Id del Oggetto</ion-label>
+      <ion-input type="text" [(ngModel)]="app.id" name="id" disabled="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nuovo nome del Oggetto</ion-label>
+      <ion-input type="text" [(ngModel)]="app.nome" name="nome">nome</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nuova descrizione del Oggetto</ion-label>
+      <ion-input type="text" [(ngModel)]="app.descrizione" name="descrizione">descrizione</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nuova foto</ion-label>
+      <ion-input type="text" [(ngModel)]="app.foto" name="foto">foto</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nuova prestato</ion-label>
+      <ion-toggle [(ngModel)]="app.disponibilita"  name="disponibilita">disponibilita</ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>A Chi è stato Prestato di nuovo</ion-label>
+      <ion-input type="text" [(ngModel)]="app.personaprestato" name="personaprestato">personaprestato</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quando è stato Prestato di nuovo</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="app.giorno" name="giorno">giorno | date: 'dd-MM-yyyy'</ion-datetime>
+    </ion-item>
+    <button ion-button type="button" (click)="modify ()">Modifica</button>
+    <button ion-button type="button" [navPush]='homepage'>Annulla</button>
+  </form>
+</ion-content>
