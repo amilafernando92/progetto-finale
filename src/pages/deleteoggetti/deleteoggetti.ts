@@ -25,6 +25,10 @@ export class DeleteoggettiPage {
 
   elimina (): void {  //funzione che elimina oggetto richiamando la funzione del servizio
     this.serviziooggetti.removeItem(this.app.id);
+    this.returnPage ();
+  }
+  
+  returnPage () {
     this.navCtrl.setRoot(this.homepage);
   }
 

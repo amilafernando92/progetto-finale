@@ -39,6 +39,10 @@ export class AddoggettiPage {
 
   submit (): void { //funzione che aggiunge un oggetto richiamando funzione del servizio
     this.serviziooggetti.addItem (this.oggetto);
+    this.returnPage ();
+  }
+  
+  returnPage () {
     this.navCtrl.setRoot(this.homepage);
   }
 

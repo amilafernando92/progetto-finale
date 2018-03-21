@@ -14,17 +14,17 @@
   <ion-item>
     <ion-label>Disponibilità : {{ app.disponibilita }}</ion-label>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="app.disponibilita">
     <ion-label>Chi ha l'oggetto : {{ app.personaprestato }}</ion-label>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="app.disponibilita">
     <ion-label>Quando l'ha preso : {{ app.giorno | date: 'dd-MM-yyyy' }}</ion-label>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="app.foto">
     <div>
       <img src="{{ app.foto }}">
     </div>
   </ion-item>
   <button ion-button type="button" (click)="elimina ()">Elimina</button>
-  <button ion-button type="button" [navPush]='homepage'>Annulla</button>
+  <button ion-button type="button" (click)="returnPage ()">Annulla</button>
 </ion-content>

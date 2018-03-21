@@ -24,7 +24,7 @@
         </div>
         <div class="flexdirectionrow">
             <p class="bigtext">{{ vet.nome }}</p>
-            <p class="smalltext">Prestato a {{ vet.personaprestato }}, in data {{ vet.giorno | date: 'dd-MM-yyyy' }}</p>
+            <p class="smalltext" *ngIf="vet.disponibilita">Prestato a {{ vet.personaprestato }}, in data {{ vet.giorno | date: 'dd-MM-yyyy' }}</p>
         </div>
       </ion-item>
       <ion-item-options side="right">
@@ -32,7 +32,7 @@
         <button ion-button class="colortransparent textcolorblack" (click)="changepage (vet, 3)"><ion-icon class="icon" ios="ios-trash-outline" md="md-trash"></ion-icon></button> 
       </ion-item-options>
       <ion-item-options side="left">
-        <button ion-button block>Disponibilità</button>
+        <button ion-button color="{{ vet.disponibilita ? 'danger' : 'secondary' }}" block>Disponibilità</button>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

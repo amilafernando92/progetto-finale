@@ -32,20 +32,20 @@
       <ion-label>Nuova prestato</ion-label>
       <ion-toggle [(ngModel)]="app.disponibilita"  name="disponibilita">disponibilita</ion-toggle>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="app.disponibilita">
       <ion-label>A Chi è stato Prestato di nuovo</ion-label>
       <ion-input type="text" [(ngModel)]="app.personaprestato" name="personaprestato">personaprestato</ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="app.disponibilita">
       <ion-label>Quando è stato Prestato di nuovo</ion-label>
       <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="app.giorno" name="giorno">giorno | date: 'dd-MM-yyyy'</ion-datetime>
     </ion-item>
     <ion-item>
       <div class="contenitoreimg">
-        <button class="contenitoreimg" (click)="takePicture()"><img src="{{ app.foto }}" class="contenitoreimg"></button>
+        <button class="contenitoreimg" (click)="takePicture()"><img src="{{ app.foto }}" class="contenitoreimgsrc"></button>
       </div>
     </ion-item>
     <button ion-button type="button" (click)="modify ()">Modifica</button>
-    <button ion-button type="button" [navPush]='homepage'>Annulla</button>
+    <button ion-button type="button" (click)="returnPage ()">Annulla</button>
   </form>
 </ion-content>

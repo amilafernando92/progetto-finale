@@ -10,7 +10,7 @@
 }
 ion-title.title.title-md {
     display: table-cell;
-    width: 90%;
+    width: 99%;
     text-align: center;
 }
 #h1testohome {
@@ -50,5 +50,8 @@ ion-title div.toolbar-title.toolbar-title-md {
     margin-right: 1%;
 }
 .item-inner {
-    border: none;
+    border: none !important;
+}
+.toolbar-content.toolbar-content-md {
+    width: 100% !important;
 }

@@ -28,11 +28,11 @@
         <ion-label>Prestato</ion-label>
         <ion-toggle [(ngModel)]="oggetto.disponibilita" name="disponibilita"></ion-toggle>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="oggetto.disponibilita">
         <ion-label>A Chi è stato Prestato</ion-label>
         <ion-input type="text" [(ngModel)]="oggetto.personaprestato" name="personaprestato"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="oggetto.disponibilita">
         <ion-label>Quando è stato Prestato</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="oggetto.giorno" name="giorno"></ion-datetime>
       </ion-item>
@@ -42,7 +42,7 @@
         </div>
       </ion-item>
       <button ion-button type="button" (click)="submit ()">Carica</button>
-      <button ion-button type="button" [navPush]='homepage'>Annulla</button>
+      <button ion-button type="button" (click)="returnPage ()">Annulla</button>
     </form>
   </ion-content>
   
