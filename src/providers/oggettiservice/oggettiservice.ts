@@ -25,7 +25,11 @@ export class OggettiserviceProvider {
   }
 
   addItem (appobject): void { //aggiunge un oggetto al vettore e poi caricato nello storage <viene dal addoggetti.ts>
-    appobject.id = this.vettore.length+1;
+    if (this.vettore.length!=0) {
+      appobject.id = (this.vettore[this.vettore.length-1].id)+1;
+    } else {
+      appobject.id = 1;
+    }
     this.vettore.push(appobject);
     console.log(this.vettore);
     this.storage.setStorageItem (this.vettore);

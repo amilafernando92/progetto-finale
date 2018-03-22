@@ -1,9 +1,9 @@
 export class Oggetti {
-    id: Number;
-    nome: String;
-    descrizione: String;
-    foto: String;
-    disponibilita: Boolean;
-    personaprestato: String;
-    giorno: String;
+    id: number;
+    nome: string;
+    descrizione: string;
+    foto: string;
+    disponibilita: boolean;
+    personaprestato: string;
+    giorno: string;
 }
